@@ -107,10 +107,14 @@ ROLLBACK TO A;
 
 
 ### QUERY:
-
+```
+select * from employee;
+commit;
+```
 
 ### OUTPUT:
 
+![image](https://github.com/sandhyabalamurali/DBMS/assets/115525118/434bc37d-4475-4766-a9a0-3101169a9758)
 
 ### Q10) Rollback to save point s1;
 
@@ -125,25 +129,37 @@ ROLLBACK TO A;
 
 
 ### QUERY:
+```
+CREATE USER new_user IDENTIFIED BY password;
+GRANT CONNECT, RESOURCE TO new_user;
+GRANT INSERT, UPDATE ON table_name TO new_user;
+SELECT table_name FROM user_tables WHERE table_name = 'EMPLOYEE';
 
+
+COMMIT;
+```
 
 ### OUTPUT:
+![image](https://github.com/sandhyabalamurali/DBMS/assets/115525118/6482798c-6beb-4d0e-9123-c576729173d4)
 
 
 ### Q12) Check the user access and display the result 
 
 
 ### QUERY:
+```
 
+SELECT * FROM USER_TAB_PRIVS;
+SELECT * FROM DBA_TAB_PRIVS WHERE grantee = 'USERNAME';
+```
 
 ### OUTPUT:
-
+![image](https://github.com/sandhyabalamurali/DBMS/assets/115525118/bd4efda3-6cf6-4ba9-b535-113985acfa90)
 ### Q13) Revoke the privillages.
 
 ### QUERY:
-
-
 ### OUTPUT:
+
 
 
 ## RESULT :
