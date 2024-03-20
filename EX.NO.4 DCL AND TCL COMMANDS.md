@@ -20,57 +20,87 @@ To create a manager database and execute DML queries using SQL.
 
 ### QUERY:
 
-
+```
+create table employee(
+emp_id numeric,
+emp_name varchar(10),
+addr varchar(40)
+);
+```
 ### OUTPUT:
+![image](https://github.com/sandhyabalamurali/DBMS/assets/115525118/73ef9cfc-57d9-46a6-af6f-ccac87d34dd9)
 
 ### Q2) Insert three rows into emploee table 
 
 
 ### QUERY:
 
-
+```
+insert into employee values(1,'Luffy','EastBlue');
+insert into employee values(2,'Shanks','GodValley');
+insert into employee values(3,'Grap','MarinFord');
+```
 ### OUTPUT:
+![image](https://github.com/sandhyabalamurali/DBMS/assets/115525118/fb83c1d5-90f0-4e2b-b4c5-1bfb7ba2280f)
 
 ### Q3) Start the transaction and create a save point s1.
 
 ### QUERY:
 
-
+```
+exec savepoint A;
+```
 ### OUTPUT:
+![image](https://github.com/sandhyabalamurali/DBMS/assets/115525118/5c0fb79e-1d25-4b51-8272-374ea8a02586)
 
 ### Q4) Perform insertion into employee table.
 
 ### QUERY:
 
-
+```
+insert into employee values(4,'Robin','EniesLobby');
+SELECT * FROM employee;
+```
 ### OUTPUT:
+![image](https://github.com/sandhyabalamurali/DBMS/assets/115525118/46e61ae7-ebbc-4e1a-be8f-17f6a26b6a60)
 
 
 ### Q6)	Display the employee table and create a save point s2 .
 
 
 ### QUERY:
-
+```
+select * from employee;
+exec savepoint s2;
+```
 
 ### OUTPUT:
 
+![image](https://github.com/sandhyabalamurali/DBMS/assets/115525118/072f436e-82d2-42ea-9b37-08de15e68399)
 
 ### Q7)	Perform updation on any one of the row.
 
 
 ### QUERY:
 
-
+```
+update employee set emp_name='Nico Robin' where emp_id=4;
+```
 ### OUTPUT:
+![image](https://github.com/sandhyabalamurali/DBMS/assets/115525118/3159acc0-9971-42a7-975a-c9976eac920b)
 
 
 ### Q8) Display the employee table and rollback to  save point s2 
 
 
 ### QUERY:
-
+```
+SELECT * FROM employee;
+ROLLBACK TO A;
+```
 
 ### OUTPUT:
+![image](https://github.com/sandhyabalamurali/DBMS/assets/115525118/23b2f215-91cb-4a5f-bb08-96cbc13d0404)
 
 
 ### Q9) Display the employee table and commit the changes; 
